@@ -1,0 +1,11 @@
+//requirements//
+
+copy this template and replace your credentials
+paste to the file call app.properties in RoadApp/src/main/resources/
+
+spring.application.name=RoadApp
+spring.datasource.url=jdbc:mysql://database_url/database_name?useUnicode=true&characterEncoding=UTF-8&connectionCollation=utf8mb4_unicode_ci
+spring.datasource.username = username
+spring.datasource.password = password
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect

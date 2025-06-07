@@ -1,0 +1,30 @@
+//requirements//
+
+//set up//
+vite version 6.3.5(latest stable)
+-to check this go to the RoadWed(Client)/my-first-react-app 
+-run this in terminal 
+npm info vite version
+----------------------------
+npm version 11.4.5 or higher
+-to check it,run this in terminal
+npm -version
+-----------------------------------
+Recommended globally on your PC
+node version 22.13.1 or higher 
+(if you have this version of node the npm is mostly auto updated)
+-to check it,run this in terminal 
+node -v
+----------------------------------
+after checking, run this in npm info vite version
+npm install
+----------------------------------
+//run//
+after setting up everything.
+run this in RoadWed(Client)/my-first-react-app 
+
+npm run dev 
+
+this will give you url in colored text.
+just copy and paste in chrome
+that's all for client
