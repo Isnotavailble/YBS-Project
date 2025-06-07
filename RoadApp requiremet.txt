@@ -9,3 +9,21 @@ spring.datasource.username = username
 spring.datasource.password = password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+JDK version 21
+run this
+---> ./mvnw clean install
+or just run with main class
+
+Make sure you have JAVA_HOME system variable(if Maven show about Java_home)
+to do this,go to system variable from task bar
+-click environment variables
+-click new in system variable section
+-in variable name = JAVA_HOME
+-in value = path of your jdk
+
+In user variable section
+click Path and then Edit
+add this %JAVA_HOME%/bin
+then Ok
+
