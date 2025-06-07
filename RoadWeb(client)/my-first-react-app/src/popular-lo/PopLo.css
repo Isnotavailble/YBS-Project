@@ -1,0 +1,31 @@
+.p-container{
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-left: 40px;
+    margin-right: 40px;
+    gap:21px;
+}
+.pop-locations h3 {
+    margin-left: 40px;
+    text-transform: uppercase;
+    font-size: 13px;
+    background-color: white;
+    width : 189px;
+    text-align:center;
+    padding:10px;
+    border:solid 2px black;
+    border-radius: 5px;
+}
+.pop-locations p {
+
+    font-size: 15px;
+    margin-left: 40px;
+}
+.pop-locations h3 span {
+    color : white;
+    background-color:rgb(184, 184, 51);
+    padding:5px;
+    border-radius: 8px;
+}

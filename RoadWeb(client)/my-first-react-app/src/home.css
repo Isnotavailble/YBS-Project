@@ -1,0 +1,62 @@
+.img-container {
+  width: 900px;
+  height: 460px;
+
+}
+
+.img-container img {
+  filter: blur(0.3px);
+  border-radius: 60px;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: fill;
+  /* This crops the image to fill the container */
+}
+
+.h-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+#q {
+  font-weight: bold;
+  font-size: 17px;
+  text-transform: capitalize;
+
+
+}
+
+p {
+  font-size: 15px;
+  max-width: 960px;
+}
+
+
+
+.line {
+  background-color: rgba(0, 0, 0, 0.692);
+  height: 7px;
+  margin: 50px;
+  border: none;
+  border-radius: 5px;
+
+}
+#manual-Links{
+  font-size: 12px;
+  text-decoration: none;
+  border: 1px none;
+  padding:5px;
+  color: white;
+  border-radius: 5px;
+  background-color: rgba(133, 131, 131, 0.808);
+  transition: 0.3s ease;
+}
+#manual-Links:hover{
+  background-color: rgb(141, 141, 17);
+  padding-left:10px;
+  padding-right: 10px;
+}

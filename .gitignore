@@ -1,0 +1,7 @@
+### IntelliJ ###
+.idea
+### VsCode ###
+.vscode
+### Importances ###
+DataBase/
+Post/

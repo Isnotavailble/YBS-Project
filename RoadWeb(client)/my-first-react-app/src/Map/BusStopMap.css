@@ -1,0 +1,6 @@
+
+.BusStopMap .leaflet-container {
+    float: right;
+    width: 100%;
+    height: 80vh;
+}

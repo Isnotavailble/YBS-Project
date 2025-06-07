@@ -1,0 +1,89 @@
+nav {
+    width:100%;
+    position: absolute;
+    top:0px;
+    left:0px;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 11px;
+    background-color: rgb(248, 233, 24);
+}
+
+nav .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav h2 {
+    background-color: rgba(0, 0, 0, 0.808);
+    display: inline;
+    margin: 2px;
+    padding: 9px;
+    border: 1px none;
+    border-radius: 12px;
+    margin-right: 50px;
+    font-size: 25px;
+    color: whitesmoke;
+
+}
+
+#route {
+    color: rgb(248, 244, 41);
+}
+
+nav input {
+    margin-right: 5px;
+    border-radius: 6px;
+    border: 1px none;
+    padding-left: 7px;
+    width:250px;
+    height: 30px;
+    transition: all ease 0.5s;
+}
+.input-hide {
+    overflow: hidden;
+    width: 0px;
+    padding: 0px;
+}
+
+nav .container input:focus {
+    padding-right: 18px;
+    outline-color: rgb(169, 173, 173);
+    outline-width: 2px;
+}
+
+.container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgba(0, 0, 0, 0.808);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    transition: ease 0.3s;
+}
+
+.container a:hover {
+    background-color: rgb(141, 141, 17);
+}
+
+#nav-links {
+    position: relative;
+    display: flex;
+    gap: 50px;
+    margin-left: 50px;
+}
+
+#icon {
+    color: rgb(248, 233, 24);
+    padding-left: 6px;
+    width: 18px;
+    height: 18px;
+}

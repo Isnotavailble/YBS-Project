@@ -1,0 +1,7 @@
+.leaflet-container{
+    float: left;
+    width:78%;
+    height: 80vh;
+    z-index: 2;
+    
+}

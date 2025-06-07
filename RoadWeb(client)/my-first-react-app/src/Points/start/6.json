@@ -1,0 +1,58 @@
+[
+    {
+        "bus_num": 6,
+        "location": {
+            "name": "၈/၉ လမ်းဆုံ",
+            "latitude": 16.8421912,
+            "longitude": 96.2796692
+        }
+    },
+    {
+        "bus_num": 53,
+        "location": {
+            "name": "အလည်ရွာ",
+            "latitude": 16.9194525,
+            "longitude": 96.0646615
+        }
+    },
+    {
+        "bus_num": 61,
+        "location": {
+            "latitude": 16.8681536,
+            "longitude": 96.0114831,
+            "name": "အနောက်ပိုင်းနည်းပညာတက္ကသိုလ်"
+        }
+    },
+    {
+        "bus_num": 82,
+        "location": {
+            "latitude": 16.87863,
+            "longitude": 96.02287,
+            "name": "ဒဂုံဧရာအ‌ဝေး‌ပြေး"
+        }
+    },
+    {
+        "bus_num": 74,
+        "location": {
+            "latitude": 16.87863,
+            "longitude": 96.02287,
+            "name": "ဒဂုံဧရာအ‌ဝေး‌ပြေး"
+        }
+    },
+    {
+        "bus_num": 7,
+        "location": {
+            "name": "၆၂ကားဂိတ်",
+            "latitude": 16.8808163,
+            "longitude": 96.2503624
+        }
+    },
+    {
+        "bus_num": 78,
+        "location": {
+            "name": "ကွန်ပျူတာတက္ကသိုလ်",
+            "latitude": 16.9986188,
+            "longitude": 96.0882282
+        }
+    }
+]

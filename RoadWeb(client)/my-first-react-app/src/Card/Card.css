@@ -1,0 +1,62 @@
+.card-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background: rgb(75, 74, 75);
+    min-width: 320px;
+    height: 320px;
+    border-radius: 20px;
+    transition: ease 0.3s;
+}
+
+.card-container h4 {
+    position: relative;
+    font-size: 20px;
+    color: rgb(231, 227, 227);
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: solid white 1px;
+    border-radius: 10px;
+}
+
+.card-container .leaflet-container {
+    border: none;
+    position: relative;
+    top: -10px;
+    border: none;
+    height: 230px;
+    width: 100%;
+
+}
+
+.card-container:hover {
+    min-width: 340px;
+}
+
+.loaderContext {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+
+    background:
+        linear-gradient(0.25turn, transparent, rgba(238, 240, 238, 0.897), transparent),
+        linear-gradient(#DDD, #DDD),
+        linear-gradient(#DDD, #DDD),
+        linear-gradient(#DDD, #DDD);
+    background-color: #9b9a9a;
+    background-repeat: no-repeat;
+    background-size: 215px 100%, 100% 180px, 190px 15px, 260px 15px;
+    background-position: -215px 0, 0 100%, 60px 44px, 25px 70px;
+    animation: loadingContext 1.5s infinite;
+
+}
+
+@keyframes loadingContext {
+    to {
+        background-position: 215px 0, 0 100%, 60px 44px, 25px 70px;
+    }
+}

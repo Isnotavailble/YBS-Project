@@ -1,0 +1,210 @@
+.side-container-busstop {
+    overflow-x: hidden;
+    overflow-y: auto;
+    float: left;
+    text-align: center;
+    background-color: rgb(100, 100, 100);
+    width: 480px;
+    height: 80vh;
+
+}
+
+#bus-and-stop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectedBus {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    right: 50px;
+    top: 20px;
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: rgba(7, 7, 196, 0.5);
+    z-index: 9;
+}
+
+.bus-stop-name button {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: normal;
+    background-color: rgb(87, 86, 86);
+    border-radius: 5px;
+    margin-left: 11px;
+    padding: 10px;
+    padding-bottom: 10px;
+    margin-right: 3px;
+    transition: all ease 0.3s;
+}
+
+.bus-stop-name button:hover {
+    background-color: rgb(101, 103, 104);
+}
+
+#bus-and-stop .bus-stop-name {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 88%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgb(32, 33, 34);
+    transition: ease 0.3s;
+    max-height: 50px;
+}
+
+#bus-and-stop .bus-stop-name p {
+    margin-left: 30px;
+    font-size: small;
+    font-weight: bold;
+    color: white;
+}
+
+#bus-and-stop .bus-stop-name:hover {
+    width: 92%;
+}
+
+.bus-related {
+    display: flex;
+    max-height: 0px;
+    overflow-y: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 87%;
+    transition: max-height ease 0.3s;
+
+}
+
+.bus-related .button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(238, 225, 49);
+    /*background-color: rgb(245, 244, 244);*/ 
+    margin-bottom: 5px;
+    width: 66%;
+    height: 48px;
+}
+
+.button button {
+    background-color: rgb(22, 22, 22);
+    color: white;
+    margin-left: 50px;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: bold;
+    width: 90px;
+    height: 20px;
+    transition: ease 0.1s;
+
+}
+#bus-button-icon2{
+    color: white;
+    width:40px;
+    height: 50px;
+}
+#bus-icon-background{
+    position: relative;
+    overflow: hidden;
+    top: 0px;
+    left: -1px;
+    border-radius: inherit;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-left:-9px;
+    height: 52px;
+    width:70px;
+    background-color: rgb(22, 22, 22);
+}
+
+.button button:hover {
+    background-color: rgb(66, 66, 66);
+    height: 30px;
+}
+
+.button span {
+    font-family: monospace;
+    font-size: 19px;
+    font-weight: bolder;
+    margin-left: 16px;
+    width: 3ch;
+    padding: 0.8ch;
+    color: white;
+    border-radius: 3px;
+    background-color: rgb(22, 22, 22);
+}
+
+.bus-related .button #bus-button-icon {
+    color: black;
+}
+
+#bus-and-stop i svg {
+    margin-left: 7px;
+    width: 40px;
+    height: 40px;
+    color: rgb(248, 233, 24);
+}
+
+#map-container {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    /* Anchors the absolutely positioned child */
+}
+
+.title-left-side-bar {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(17, 17, 17);
+    margin-bottom: 30px;
+}
+
+.title-left-side-bar h2 {
+    background-color: rgb(85, 85, 85);
+    color: rgb(231, 231, 231);
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.overlay2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* This is essential */
+    top: 0;
+    right: 0;
+    /* Align to the right side */
+    width: 100%;
+    height: 80vh;
+    font-size: 19px;
+    font-weight: bold;
+    color: rgb(243, 241, 241);
+    background-color: rgba(0, 0, 0, 0.39);
+    /* Use rgba for semi-transparency */
+    z-index: 6;
+}
+
+.overlay2 img {
+    margin-left: 5px;
+    width: 60px;
+    height: 60px;
+}
+
+.overlay2 span {
+    margin-left: 10px;
+    color: rgb(248, 233, 24);
+}
