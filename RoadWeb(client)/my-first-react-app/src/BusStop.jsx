@@ -16,7 +16,8 @@ function BusStop(props) {
     const [loaded, setLoaded] = useState(null);
     //remove zero-width characters from input
     function sanitizeInput(input) {
-        return input.replace(/[\u200B\u200C\u200D\uFEFF]/g, '');
+        let unsanitize_string = new RegExp("[\u200B\u200C\u200D\uFEFF]", "g");
+        return String(input).replace(unsanitize_string,'');
     }
     //get bus number
     function getBus(bus_num) {
