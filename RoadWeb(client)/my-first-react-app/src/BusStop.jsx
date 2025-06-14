@@ -7,7 +7,7 @@ import OverLay from "./Overlay/OverlayTemp.jsx";
 import Loader from "./Overlay/Loader.jsx";
 function BusStop(props) {
     const [sidePage, setSidePage] = useState("BusStopMap");
-    const [relatedAllBus, setRelatedAllBus] = useState(null);
+    const [relatedAllBus, setRelatedAllBus] = useState(null);// array of Object of bus entity
     const clickButton = useRef({});
     const [selectedStop, setSelectedStop] = useState(null);
     const [error, setError] = useState(null);
@@ -118,20 +118,24 @@ function BusStop(props) {
                 }
 
             })
+            .finally(() => props.update_inputData(null));
         return () => controller.abort();
     }
     //initial setup
     //updated : busStop removed (api will fire once when component is mounted)
     useEffect(() => {
+        props.update_inputData(null);
         const clean = getBusStop("ဒဂုံဧရာအ‌ဝေး‌ပြေး");
         return () => clean();
 
     }, []);
     //input data from search bar (updated direct handle input)
     useEffect(() => {
+    
         if (props.input_data !== null) {
             console.log("input recieved : ", props.input_data);
-            getBusStop(props.input_data);
+            const clean = getBusStop(props.input_data);
+            return () => clean;
         }
     }, [props.input_data]);
 
@@ -147,7 +151,7 @@ function BusStop(props) {
 
     return (<div id="map">
         <div className="side-container-busstop">
-            <div className="title-left-side-bar"><h2>Bus-Lines</h2></div>
+            <div className="title-left-side-bar"><h2>Bus-Stopes</h2></div>
             <div>{
                 //perfomance updated for BusStop and busline buttons
                 relatedAllBus ? <div>

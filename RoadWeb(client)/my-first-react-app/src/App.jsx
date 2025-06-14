@@ -20,15 +20,15 @@ function App() {
   //as soon as data arrive and show in somewhere and it dispears
   //i don't know how i was thinking 
   useEffect(() => {
-    setInputData(null);
     console.log("mainApp state : ",inputData);
-    
   }, [inputData]);
   //just to see location change not necessary i guess but cool XD
   useEffect(()=> {
-    console.log("change location")},[location.pathname])
+    setInputData(null);
+    console.log("change location",inputData);},[location.pathname])
+  
     //should move to component level later
-    function PageLoader() {
+  function PageLoader() {
     
     return (<>
       <Routes>

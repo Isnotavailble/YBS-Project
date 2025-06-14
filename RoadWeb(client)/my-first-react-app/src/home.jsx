@@ -13,14 +13,14 @@ function Home(props) {
             <p>
                 <span id="q">Want to hang out and don't know how to YBS? we got you back!</span>
 
-                YBS Route is a user-friendly mobile application designed to provide a comprehensive guide to bus lines in Yangon.
+                YBS Route is a user-friendly website designed to provide a comprehensive guide to bus lines in Yangon.
                 Whether you're a daily commuter or a first-time visitor,
-                the app helps you easily navigate the city's public transportation system.
-                With detailed route maps, bus numbers, stop locations, and estimated travel times,
+                this helps you easily navigate the city's public transportation system.
+                With detailed route maps, bus numbers, and stop locations.
                 YBS Route ensures users can find the most efficient path to their destination.
                 Its intuitive interface makes it simple to search for routes,
                 plan trips, and avoid confusion on the go. By streamlining access to bus line information,
-                YBS Route supports a smoother, more convenient commuting experience across the city.
+                YBS Route supports a smoother, more convenient commuting experience across the city with ease.
             </p>
             <Link to={"/about"} id="manual-Links">read more</Link>
 

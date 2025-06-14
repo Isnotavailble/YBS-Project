@@ -10,16 +10,16 @@ public class EntityBus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Integer num;
+    private Long num;
     @ManyToMany
     private List<EntityLocation> destinations;
 
     public EntityBus(){}
-    public EntityBus(Integer no,List<EntityLocation> d){
+    public EntityBus(Long no,List<EntityLocation> d){
         this.num = no;
         this.destinations = d;
     }
-    public Integer getNum(){
+    public Long getNum(){
         return num;
     }
     public List<EntityLocation> getDestinations(){
@@ -30,7 +30,7 @@ public class EntityBus {
     }
     public Long getId(){return id;}
     public void  setId(Long id){this.id = id;}
-    public void setNum(Integer num){this.num = num;}
+    public void setNum(Long num){this.num = num;}
     public String toString(){
         StringBuilder temp = new StringBuilder();
         for (EntityLocation t : destinations){

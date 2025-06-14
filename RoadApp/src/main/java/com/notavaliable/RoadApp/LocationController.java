@@ -105,7 +105,7 @@ public class LocationController {
     //Can return freedom(all datatype in body)
     //update -- clean up code
     @GetMapping("/admin/getBusNum/{num}")
-    public ResponseEntity<?> getBusNum(@PathVariable Integer num) {
+    public ResponseEntity<?> getBusNum(@PathVariable Long num) {
         Optional<EntityBus> entry_bus = bus.findByNum(num);
         if(entry_bus.isPresent()){
             return ResponseEntity.ok(entry_bus.get());
@@ -172,7 +172,7 @@ public class LocationController {
 
     //just in case if wrong data uploaded about bus number
     @PutMapping("admin/updateBus/{id}/{num}")
-    public ResponseEntity<String> updateBus(@PathVariable Long id,@PathVariable Integer num){
+    public ResponseEntity<String> updateBus(@PathVariable Long id,@PathVariable Long num){
         Optional<EntityBus> existing = bus.findById(id);
         if(existing.isPresent()){
             EntityBus e_bus = existing.get();

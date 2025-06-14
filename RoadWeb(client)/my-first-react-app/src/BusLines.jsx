@@ -44,7 +44,7 @@ function BusLines(props) {
                     setStatus("network error");
                 }
 
-            });
+            }).finally(() => {props.update_inputData(null)});
 
         return () => controller.abort();
     }
@@ -74,6 +74,7 @@ function BusLines(props) {
     }
     //initial setup
     useEffect(() => {
+        props.update_inputData(null);
         const allbus_clean = getAllBus();
         return () => { allbus_clean; }
     }, []);
