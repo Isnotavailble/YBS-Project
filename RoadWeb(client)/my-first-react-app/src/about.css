@@ -1,0 +1,94 @@
+#about-pic{
+    position: relative;
+    left:-2px;
+    top:-2px;
+    width: 700px; 
+    height: 527px;
+    object-fit: cover;
+    object-position: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#about-side-container {
+    position: relative;
+    right:100px;
+    top:70px;
+    float: right;
+
+}
+
+#about-box-container h2{
+    margin-top: 50px;
+    font-size: 60px;
+}
+#about-line{
+    background-color: #2C2C2C;
+    margin-top: -30px;
+    width:196px;
+    height: 7px;
+    border-radius: 5px;
+}
+.about-box{
+    margin-bottom: 37px;
+    max-height: 522px;
+    border-radius: 10px;
+    border:solid #B8B3B3 3px;
+}
+.about-text-box{
+    font-size: 22px;
+    margin-top: 33px;
+    max-width: 430px;
+    font-weight: lighter;
+}
+.about-text-box span {
+    font-weight: bold;
+}
+.about-box h2{
+    position: relative;
+    font-size: 60px;
+    font-weight: bolder;    
+}
+.guidelines-box{
+    margin-left:37px;
+}
+.guidelines-box #about-line{
+    position: relative;
+    top:-20px;
+    margin-bottom: 10px;
+    left:10px;
+}
+.guidelines-box svg {
+    position: relative;
+    top: 10px;
+}
+.guidelines-box .text{
+    position: relative;
+    margin-top:-20px;
+    font-size: 25px;
+    font-weight: lighter;
+}
+.guidelines-box .text-box1 .text{
+    font-size: 18px;
+    font-weight: lighter;
+    max-width :400px;
+}
+.guidelines-box .text-box1 {
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    border : solid 3px #B8B3B3;
+    background-color: #F5F5F5;
+    max-width: 430px;
+}
+.guidelines-box .text-box1 h3 {
+    margin-bottom: 55px;
+    font-size: 20px;
+}
+.guidelines-box .text-box2{
+    position: relative;
+    left : 670px;
+    top :-250px;
+    width : 500px;
+    height: 250px;
+}
+

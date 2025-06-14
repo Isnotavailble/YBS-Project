@@ -2,6 +2,7 @@ import Home from "./home.jsx";
 import Nav from "./nav_bar/Nav.jsx";
 import BusLines from "./BusLines.jsx";
 import BusStop from "./BusStop.jsx"; 
+import About from "./about.jsx";
 import "./index.css";
 import {Routes,Route,useLocation, useNavigate} from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -35,7 +36,7 @@ function App() {
         <Route path="/" element={<Home page={location.pathname}/>}/>
         <Route path="/buslines" element={<BusLines input_data={inputData} update_inputData={setInputData}/>}/>
         <Route path="/busstop" element={<BusStop input_data={inputData} update_inputData={setInputData}/>}/>
-        <Route path="/about" element={<div><h1>Coming soon</h1></div>}/>
+        <Route path="/about" element={<About/>}/>
       </Routes>   
     </>)
   }
