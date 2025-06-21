@@ -25,8 +25,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 
 ---
-
-### 🌐 Frontend - RoadWeb (React + Vite)
+### 🌐Frontend - RoadWeb (React + Vite)
 
 ✏️ Environment Versions
 
