@@ -22,7 +22,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 ---
 
-###🌐 Frontend - RoadWeb (React + Vite)
+### 🌐 Frontend - RoadWeb (React + Vite)
 
 🧪 Environment Versions
 
@@ -57,7 +57,7 @@ node -v
 
 ---
 
-📥 Install Dependencies
+### 📥 Install Dependencies
 
 After checking all versions, install the frontend dependencies:
 
@@ -67,7 +67,7 @@ npm install
 
 ---
 
-🚀 Running the Client
+### 🚀 Running the Client
 
 Once everything is set up, start the React development server:
 
@@ -79,7 +79,7 @@ Just copy and paste that into your Chrome browser to view the app.
 
 ---
 
-✅ That’s it! Your client and server are now ready to run.
+### ✅ That’s it! Your client and server are now ready to run.
 
 ---
 
