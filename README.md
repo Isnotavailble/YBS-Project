@@ -1,4 +1,4 @@
-Thanks for sharing the screenshot — it looks like you’re viewing the Markdown file on a mobile Markdown editor or GitHub app, and the formatting is not rendering headers correctly (e.g., ### shows a
+
 
 # 🛠️ Requirements and Setup Guide
 
@@ -26,7 +26,7 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 ---
 
-🌐 Frontend - RoadWeb (React + Vite)
+### 🌐 Frontend - RoadWeb (React + Vite)
 
 ✏️ Environment Versions
 
