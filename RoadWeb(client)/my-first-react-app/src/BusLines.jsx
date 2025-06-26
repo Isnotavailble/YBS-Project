@@ -145,7 +145,8 @@ function BusLines(props) {
             return (
                 <BusLineMap
                     center_data={arrival_locations[0][0]}
-                    marker_data={arrival_locations} bus_num={bus_j.num}>
+                    marker_data={arrival_locations} bus_num={bus_j.num}
+                    manual_center={false}>
                 </BusLineMap>);
         }
         return null;
