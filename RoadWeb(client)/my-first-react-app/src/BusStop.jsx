@@ -1,11 +1,13 @@
 import BusStopMap from "./Map/BusStopMap.jsx";
 import "./BusStop.css";
 import NotFound from "./assets/NotFound.png";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef,useContext } from "react";
 import BusLineMap from "./Map/BusLineMap.jsx";
 import OverLay from "./Overlay/OverlayTemp.jsx";
 import Loader from "./Overlay/Loader.jsx";
+import { ContextData } from "./ContextData/ContextData.jsx";
 function BusStop(props) {
+    let {inputData,setInputData} = useContext(ContextData);//context data for input
     const [sidePage, setSidePage] = useState("BusStopMap");
     const [relatedAllBus, setRelatedAllBus] = useState(null);// array of Object of bus entity
     const clickButton = useRef({});
@@ -102,13 +104,13 @@ function BusStop(props) {
                 }
 
             })
-            .finally(() => props.update_inputData(null));
+            .finally(() => setInputData(null));
         return () => controller.abort();
     }
     //initial setup
     //updated : busStop removed (api will fire once when component is mounted)
     useEffect(() => {
-        props.update_inputData(null);
+        setInputData(null);
         const clean = getBusStop("ဒဂုံဧရာအ‌ဝေး‌ပြေး");
         return () => clean();
 
@@ -116,12 +118,12 @@ function BusStop(props) {
     //input data from search bar (updated direct handle input)
     useEffect(() => {
 
-        if (props.input_data !== null) {
-            console.log("input recieved : ", props.input_data);
-            const clean = getBusStop(props.input_data);
+        if (inputData !== null) {
+            console.log("input recieved : ", inputData);
+            const clean = getBusStop(inputData);
             return () => clean;
         }
-    }, [props.input_data]);
+    }, [inputData]);
 
     //when all bus data is loaded,set default bus stop
     useEffect(() => {

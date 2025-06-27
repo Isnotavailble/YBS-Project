@@ -90,9 +90,7 @@ const BusLineMap = (props) => {
                 >
                 <TileLayer url={url} attribution={attribution} tileSize={256} maxZoom={15} minZoom={13}/>
                 {props.marker_data.map((e, i) =>{
-                    if(props.center_data[0] === e[0][0] && props.center_data[1] === e[0][1]){
-                        console.log("found it",e[0], props.center_data);
-                    }
+                    
                     return props.center_data[0] === e[0][0] && props.center_data[1] === e[0][1] && props.manual_center?
                         <Marker key={"red" + i} position={props.center_data} icon={redIcon}>
                             <Popup><b>{e[1]}</b></Popup>

@@ -1,12 +1,16 @@
 
 import "./Nav.css";
-import { Link } from "react-router-dom";
+import { ContextData } from "../ContextData/ContextData";
+import { Link} from "react-router-dom";
+import { useContext} from "react";
 function Nav(props) {
-    //take the value from search bar and after searching it,it will be set to null again
+    let { setInputData } = useContext(ContextData);
+    
     function inputProcess() {
         const data = document.getElementById("search-bar-input").value.trim();
         console.log("Enter : " + data);
-        props.input_data(data);
+
+        setInputData(data);
         document.getElementById("search-bar-input").value = null;
     }
     //capture keyboard event 

@@ -1,16 +1,20 @@
 import BusLineMap from "./Map/BusLineMap.jsx";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext} from "react";
 import OverLay from "./Overlay/OverlayTemp.jsx";
 import "./BusLines.css";
 import Loader from "./Overlay/Loader.jsx";
-
+import { ContextData } from "./ContextData/ContextData.jsx";
 function BusLines(props) {
     const [bus_j, setBusJ] = useState(null);
     const [allBus, setAllBus] = useState(null);
     const [busButtons, setBusButtons] = useState(null);
     const [selectedBus, setSelectedBus] = useState(53);
     const [status, setStatus] = useState(null);
-
+    let {inputData,setInputData} = useContext(ContextData);
+    //check the Context value 
+    useEffect(() => {
+        console.log("global inputdata : ", inputData);
+    },[inputData]);
     function getBus() {
         const controller = new AbortController;
         setStatus("loading");
@@ -43,8 +47,9 @@ function BusLines(props) {
                 if (e.message === "Unknown Error") {
                     setStatus("network error");
                 }
+                
 
-            }).finally(() => {props.update_inputData(null)});
+            }).finally(() => {setInputData(null);});
 
         return () => controller.abort();
     }
@@ -74,7 +79,7 @@ function BusLines(props) {
     }
     //initial setup
     useEffect(() => {
-        props.update_inputData(null);
+        setInputData(null);
         const allbus_clean = getAllBus();
         return () => { allbus_clean; }
     }, []);
@@ -89,16 +94,18 @@ function BusLines(props) {
     }, [selectedBus]);
     //catch only integer data from search bar
     useEffect(() => {
-        const inputData = props.input_data ? parseInt(props.input_data, 10) : null;
-        if (typeof inputData === "number" && !isNaN(inputData)) {
-            setSelectedBus(inputData);
-            console.log("Input recieve", inputData);
+        //updatated : inputData is denied if it is the same bus number
+        const input = inputData && inputData !== selectedBus ? parseInt(inputData, 10) : null;
+        if (typeof input === "number" && !isNaN(input)) {
+            setSelectedBus(input);
+            console.log("Input recieve", input);
         }
-        else if (inputData === null) {
-            console.log("Input is denied", inputData);
+        else {
+            console.log("Input is denied", input);
+            setInputData(null);
         }
 
-    }, [props.input_data]);
+    }, [inputData]);
     //data successfully saved
     //new data
     //double check the stop are in database
@@ -106,7 +113,6 @@ function BusLines(props) {
 
         if (bus_j !== null && allBus !== null) {
             console.log("selected : ", bus_j.num);
-
         }
 
     }, [bus_j]);
@@ -126,7 +132,6 @@ function BusLines(props) {
                     <span className="bus-button-num">{bus.num}</span>
                     <button className="bus-b-button" onClick={(e) => {
                         setSelectedBus(e.target.value);
-                        props.update_inputData(e.target.value)
                     }} key={i} value={bus.num}>
                         see bus line
                     </button>
