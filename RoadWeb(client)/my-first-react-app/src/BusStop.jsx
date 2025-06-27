@@ -188,6 +188,7 @@ function BusStop(props) {
                                                 setSidePage("BusLine");
                                                 getBus(e.target.value);
                                                 setSelectedBus(e.target.value);
+                                                setSelectedStop(busStop.location);
                                                 setError(null);
                                                 console.log("Button : ", bus.num);
                                             }
@@ -213,7 +214,7 @@ function BusStop(props) {
 
             {sidePage === "BusLine" && selectedBus && loaded ? <><div className="selectedBus">{selectedBus}</div><BusLineMap
                 marker_data={loaded}
-                center_data={[selectedStop.latitude, selectedStop.longitude]} bus_num={parseInt(selectedBus, 10)}
+                center_data={selectedStop?[selectedStop.latitude, selectedStop.longitude] : loaded[0][0]} bus_num={parseInt(selectedBus, 10)}
                 manual_center={true}>
             </BusLineMap></> : null}
         </span>

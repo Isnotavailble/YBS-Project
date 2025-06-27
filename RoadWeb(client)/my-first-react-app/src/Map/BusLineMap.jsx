@@ -20,6 +20,10 @@ const Tiles = {
         url: 'https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
         attribution: '&copy; OpenStreetMap contributors, Humanitarian OpenStreetMap Team'
     },
+    MapTiler_Streets : {
+        url : "https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=qyT85KBHD3CAAaPRmR2z",
+        attribution: "&copy; OpenStreetMap contributors"
+    },
 }
 
 const BusLineMap = (props) => {
@@ -82,8 +86,9 @@ const BusLineMap = (props) => {
         <div id="bus-line-map">
             <div>{TileStyle()}</div>
             <MapContainer center={props.center_data}
-                zoom={13}>
-                <TileLayer url={url} attribution={attribution} />
+                zoom={14}
+                >
+                <TileLayer url={url} attribution={attribution} tileSize={256} maxZoom={15} minZoom={13}/>
                 {props.marker_data.map((e, i) =>{
                     if(props.center_data[0] === e[0][0] && props.center_data[1] === e[0][1]){
                         console.log("found it",e[0], props.center_data);
