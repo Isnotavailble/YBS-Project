@@ -5,10 +5,11 @@ import BusStop from "./BusStop.jsx";
 import About from "./about.jsx";
 import "./index.css";
 import { ContextData } from "./ContextData/ContextData.jsx";
-import { Routes, Route,  useNavigate } from "react-router-dom";
+import { Routes, Route,  useNavigate, useLocation } from "react-router-dom";
 import { useEffect,useContext } from "react";
 function App() {
   let navigate = useNavigate();
+  let location = useLocation();
   let {inputData} = useContext(ContextData);
   //after refreshing,it will go to home page again
   useEffect(() => {

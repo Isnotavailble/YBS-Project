@@ -10,7 +10,7 @@ function BusStopMap(props) {
         >
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url='https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=qyT85KBHD3CAAaPRmR2z' />
+                url='https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png' />
             <DynamicCenter center={props.center_data} />
             <Marker position={props.center_data}>
                 <Popup><b>{props.name}</b></Popup>

@@ -4,6 +4,7 @@ import "./BusLineMap.css";
 import DynamicCenter from "./DynamicCenter";
 import D from "../Points/start/6.json";
 import { useState } from "react";
+import Photo from "../assets/marker-icon-red.png";
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -12,16 +13,12 @@ L.Icon.Default.mergeOptions({
 });
 
 const Tiles = {
-    OpenStreetMap: {
-        url: 'https://b.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        attribution: '&copy; OpenStreetMap contributors',
-    },
     OSM_Fr_Hot: {
         url: 'https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
         attribution: '&copy; OpenStreetMap contributors, Humanitarian OpenStreetMap Team'
     },
-    MapTiler_Streets : {
-        url : "https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=qyT85KBHD3CAAaPRmR2z",
+    MapTiler_Streets: {
+        url: "https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=qyT85KBHD3CAAaPRmR2z",
         attribution: "&copy; OpenStreetMap contributors"
     },
 }
@@ -34,7 +31,7 @@ const BusLineMap = (props) => {
     const { url, attribution } = Tiles[selectedTile];
 
     const redIcon = new L.Icon({
-        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+        iconUrl: Photo,
         shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
@@ -87,11 +84,11 @@ const BusLineMap = (props) => {
             <div>{TileStyle()}</div>
             <MapContainer center={props.center_data}
                 zoom={14}
-                >
-                <TileLayer url={url} attribution={attribution} tileSize={256} maxZoom={15} minZoom={13}/>
-                {props.marker_data.map((e, i) =>{
-                    
-                    return props.center_data[0] === e[0][0] && props.center_data[1] === e[0][1] && props.manual_center?
+            >
+                <TileLayer url={url} attribution={attribution} tileSize={256} maxZoom={15} minZoom={13} />
+                {props.marker_data.map((e, i) => {
+
+                    return props.center_data[0] === e[0][0] && props.center_data[1] === e[0][1] && props.manual_center ?
                         <Marker key={"red" + i} position={props.center_data} icon={redIcon}>
                             <Popup><b>{e[1]}</b></Popup>
                         </Marker>

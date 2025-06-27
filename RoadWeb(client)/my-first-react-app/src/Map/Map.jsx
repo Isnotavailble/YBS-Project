@@ -17,7 +17,7 @@ const MyMap = (props) => {
         >
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                url='https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
             />
             <Marker  position={[props.location.latitude,props.location.longitude]}>
                 <Popup autoClose={true}>
