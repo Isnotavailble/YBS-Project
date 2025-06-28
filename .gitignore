@@ -7,5 +7,5 @@ DataBase/
 Post/
 RoadApp/src/main/resources/application.properties
 
-/public/tiles/
+RoadWeb(client)/public/tiles/
 
