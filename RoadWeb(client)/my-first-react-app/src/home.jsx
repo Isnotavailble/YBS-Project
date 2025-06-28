@@ -7,7 +7,7 @@ function Home(props) {
     return (<div>
         <div className="h-container">
             <div className="img-container">
-                <img src={photo}></img>
+                <img src={photo} alt="Yangon"></img>
 
             </div>
             <p>
