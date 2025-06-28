@@ -1,7 +1,7 @@
 import { useMap } from "react-leaflet";
 function DynamicCenter(props){
     const map = useMap();
-    map.flyTo(props.center,14);
+    map.setView(props.center,map.getZoom());
 
 }
 export default DynamicCenter;

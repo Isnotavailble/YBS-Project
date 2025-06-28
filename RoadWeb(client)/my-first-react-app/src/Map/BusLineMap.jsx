@@ -18,7 +18,7 @@ const Tiles = {
         attribution: '&copy; OpenStreetMap contributors, Humanitarian OpenStreetMap Team'
     },
     MapTiler_Streets: {
-        url: "https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=qyT85KBHD3CAAaPRmR2z",
+        url: "https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=qyT85KBHD3CAAaPRmR2z",
         attribution: "&copy; OpenStreetMap contributors"
     },
 }
@@ -27,9 +27,12 @@ const BusLineMap = (props) => {
     const start_list = D.filter(p => p.bus_num === props.bus_num);
     const startPoint = [start_list[0].location.latitude, start_list[0].location.longitude];
     const points = props.marker_data.map((p, i) => p[0]);
-    const [selectedTile, setSelectedTile] = useState("OSM_Fr_Hot");
+    const [selectedTile, setSelectedTile] = useState("MapTiler_Streets");
     const { url, attribution } = Tiles[selectedTile];
-
+    const yangonBounds = [
+        [16.710, 95.990],  // SW
+        [17.070, 96.2503624]  // NE
+        ];
     const redIcon = new L.Icon({
         iconUrl: Photo,
         shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
@@ -83,9 +86,9 @@ const BusLineMap = (props) => {
         <div id="bus-line-map">
             <div>{TileStyle()}</div>
             <MapContainer center={props.center_data}
-                zoom={14}
+                zoom={15} maxZoom={15} minZoom={15} zoomControl={false}
             >
-                <TileLayer url={url} attribution={attribution} tileSize={256} maxZoom={15} minZoom={13} />
+                <TileLayer url={url} attribution={attribution} zoomOffset={-1} tileSize={512}  bounds={yangonBounds} />
                 {props.marker_data.map((e, i) => {
 
                     return props.center_data[0] === e[0][0] && props.center_data[1] === e[0][1] && props.manual_center ?
