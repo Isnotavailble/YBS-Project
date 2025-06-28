@@ -34,7 +34,7 @@ public class preLoad {
             @Override
             public void addCorsMappings(@NotNull CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://127.0.0.1:5500","http://localhost:5173") // <-- your JS frontend port
+                        .allowedOrigins("http://127.0.0.1:5500","http://localhost:5173","http://localhost:3000") // <-- your JS frontend port
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*")
                         .allowCredentials(true);
