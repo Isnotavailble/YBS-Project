@@ -11,14 +11,22 @@ L.Icon.Default.mergeOptions({
     iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
     shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
-
+const redIcon = new L.Icon({
+        iconUrl: Photo,
+        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41],
+    });
+    
 const Tiles = {
     OSM_Fr_Hot: {
         url: 'https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
         attribution: '&copy; OpenStreetMap contributors, Humanitarian OpenStreetMap Team'
     },
     MapTiler_Streets: {
-        url: "https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=qyT85KBHD3CAAaPRmR2z",
+        url: "/tiles/{z}/{x}/{y}.png",
         attribution: "&copy; OpenStreetMap contributors"
     },
 }
@@ -32,15 +40,8 @@ const BusLineMap = (props) => {
     const yangonBounds = [
         [16.710, 95.990],  // SW
         [17.070, 96.2503624]  // NE
-        ];
-    const redIcon = new L.Icon({
-        iconUrl: Photo,
-        shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        shadowSize: [41, 41],
-    });
+    ];
+    
     const handleChange = (e) => {
         setSelectedTile(e.target.value);
     };
@@ -86,9 +87,9 @@ const BusLineMap = (props) => {
         <div id="bus-line-map">
             <div>{TileStyle()}</div>
             <MapContainer center={props.center_data}
-                zoom={15} maxZoom={15} minZoom={15} zoomControl={false}
+                zoom={15} maxZoom={16} minZoom={15} zoomControl={true}
             >
-                <TileLayer url={url} attribution={attribution} zoomOffset={-1} tileSize={512}  bounds={yangonBounds} />
+                <TileLayer url={url} attribution={attribution} zoomOffset={-1} tileSize={512} bounds={yangonBounds} />
                 {props.marker_data.map((e, i) => {
 
                     return props.center_data[0] === e[0][0] && props.center_data[1] === e[0][1] && props.manual_center ?

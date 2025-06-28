@@ -12,7 +12,7 @@ export default defineConfig({
         name: 'YBS Route',
         short_name: 'YBS Route',
         start_url: '.',
-        display: 'fullscreeen',
+        display: 'fullscreen',
         background_color: 'white',
         theme_color: '#4CAF50',
         icons: [
@@ -31,7 +31,7 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/api\.maptiler\.com\/.*\.(png|jpg|jpeg|webp)/,
+            urlPattern: /^https:\/\/api\.maptiler\.com\/maps\/streets-v2\/\d+\/\d+\/\d+\.png(\?.*)?$/,
             handler: 'CacheFirst',
             options: {
               cacheName: 'map-tiles',
@@ -44,7 +44,7 @@ export default defineConfig({
               },
             },
           },
-       ],
+        ],
       },
     }),
   ],
